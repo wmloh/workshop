@@ -95,10 +95,6 @@ while True:
     ### GAME OVER SCREEN ###
 
     while game_over:
-        screen.fill(RED)
-        screen.blit(GAME_OVER_TEXT, (MAX_X / 2 - 190, MAX_Y / 2))
-        pygame.display.update()
-
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:  # exits program
@@ -115,6 +111,10 @@ while True:
                     x_delta, y_delta = (BLOCK_SIZE, 0)
 
                     food_x, food_y = (MAX_X / 2 - 20, MAX_Y / 2)
+
+        screen.fill(RED)
+        screen.blit(GAME_OVER_TEXT, (MAX_X / 2 - 190, MAX_Y / 2))
+        pygame.display.update()
 
         clock.tick(15)  # 15 frames/updates per second
 
